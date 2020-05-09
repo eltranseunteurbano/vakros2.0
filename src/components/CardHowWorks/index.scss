@@ -1,0 +1,29 @@
+@import '../../assets/css/colors.scss';
+
+.CardHowWorks{
+    width: 100%;
+    display: grid;
+    grid-row-gap: 20px;
+
+    &__title{
+        font-weight: bolder;
+        font-size: 20px;
+        color: $black;
+        margin: auto;
+    }
+
+    &__img{
+        margin: auto;
+        img{
+            width: 100%;
+        }
+    }
+
+    &__text{
+        font-family: 'Open Sans', sans-serif;
+        color: $black;
+        max-width: 450px;
+        margin: auto;
+        text-align: center;
+    }
+}

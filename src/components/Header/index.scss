@@ -1,0 +1,148 @@
+@import '../../assets/css/colors.scss';
+
+.header{
+    width: 100%;
+    height: 60px;
+    background-color: $white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__wrapper{
+        width: 100%;
+        max-width: 1200px;
+
+        padding: 0 100px;
+        box-sizing: border-box;
+        transition: all .4s;
+        
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        &__items{
+            &__link{
+                text-decoration: none;
+                color: $black;
+                margin-left: 15px;
+                transition: all .4s;
+            }
+
+            &__link:hover{
+                color: $blue;
+                letter-spacing: .5px;
+            }
+        }
+
+        &__menu{
+            display: none;
+        }
+
+    }
+
+    
+}
+
+.header-down{
+    width: 100%;
+    height: 60px;
+    background-color: $white;
+    border-bottom: solid 1px $lightGray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    z-index: 10;
+
+    display: none;
+
+    animation-name: down;
+    animation-duration: .5s;
+    animation-iteration-count: initial;
+
+    box-shadow: 0px 4px 4px rgba(207, 207, 207, 0.10);
+
+    &__wrapper{
+        width: 100%;
+        max-width: 1200px;
+
+        padding: 0 100px;
+        box-sizing: border-box;
+        transition: all .4s;
+        
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        &__items{
+            &__link{
+                text-decoration: none;
+                color: $black;
+                margin-left: 15px;
+                transition: all .4s;
+            }
+
+            &__link:hover{
+                color: $blue;
+                letter-spacing: .5px;
+            }
+        }
+
+        &__menu{
+            display: none;
+        }
+
+    }
+
+    
+}
+
+.activedLink{
+    font-weight: bolder;
+    color: $blue;
+}
+
+.show-header{
+    display: flex !important;
+}
+
+
+@media only screen and (max-width:850px){
+    .header{
+        &__wrapper{
+            padding: 0 20px;
+            &__items{
+                display: none;
+            }
+            &__menu{
+                display: flex;
+            }
+        }
+    }
+
+    .header-down{
+        &__wrapper{
+            padding: 0 20px;
+            &__items{
+                display: none;
+            }
+            &__menu{
+                display: flex;
+            }
+        }
+    }
+}
+
+@keyframes down {
+    0% {
+        transform: translateY(-60px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}

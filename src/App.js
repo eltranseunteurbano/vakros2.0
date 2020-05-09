@@ -1,26 +1,41 @@
+//Librerias
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { HashRouter, Switch, Route } from 'react-router-dom';
+import * as Routes from './assets/js/Routes'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+//Estilos
+import './assets/css/reset.scss';
+import './assets/css/general.scss';
+
+//containers
+import Home from './containers/Home';
+import Error404 from './containers/Error404';
+import Preguntas from './containers/Preguntas';
+import Invertir from './containers/Invertir';
+import Contact from './containers/Contact';
+
+import Header from './components/Header'
+import Footer from './components/Footer'
+
+const App = () => {
+    return(
+      <HashRouter >
+        
+          <Header />
+
+          <Switch>
+            <Route exact path='/'> <Home /> </Route>
+            <Route exact path={Routes.INDEX}> <Home /> </Route>
+            <Route exact path={Routes.PREGUNTAS}> <Preguntas /> </Route>
+            <Route exact path={Routes.INIVERTE}> <Invertir /> </Route>
+            <Route exact path={Routes.CONTACTANOS}> <Contact /> </Route>
+            <Route> <Error404 /> </Route>
+          </Switch>
+
+          <Footer />
+
+      </HashRouter >
+    );
+};
 
 export default App;

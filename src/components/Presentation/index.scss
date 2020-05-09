@@ -1,0 +1,130 @@
+@import '../../assets/css/colors.scss';
+
+.Presentation{
+    width: 100%;
+    min-height: 70vh;
+    box-sizing: border-box;
+    margin-bottom: 120px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: bottom;
+    
+    &__content{
+        width: 100%;
+        max-width: 1200px;
+
+        padding: 0 100px;
+        box-sizing: border-box;
+
+        display: grid;
+        grid-template-areas: "title img" "text img" "btn img";
+        grid-column-gap: 10px;
+        grid-row-gap: 40px;
+        transition: all .4s;
+
+        &__title{
+            grid-area: title;
+
+            font-weight: bolder;
+            font-size: 35px;
+            color: $black;
+        }
+
+        &__img{
+            grid-area: img;
+            min-width: 250px;
+            max-width: 580px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img{
+                width: 100%;
+            }
+        }
+
+        &__text{
+            grid-area: text;
+            font-family: 'Open Sans', sans-serif;
+
+            color: $black;
+            width: 380px;
+        }
+
+        &__button{
+            grid-area: btn;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 100%;
+            min-width: 150px;
+            max-width: 300px;
+            height: 50px;
+            background-color: $blue;
+            
+            color: $white;
+            font-size: 16px;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: bold;
+            text-decoration: none;
+            letter-spacing: .5px;
+
+            cursor: pointer;
+            border: solid 2px $blue;
+            border-radius: 10px;
+            transition: all .4s;
+            
+        }
+        
+        &__button:hover{
+            box-shadow: 0px 4px 4px rgba(73, 143, 235, 0.25);
+            background-color: $white;
+            color: $blue;
+            font-weight: bolder;
+        }
+    }
+}
+
+@media only screen and (max-width:850px){
+    .Presentation{
+        padding-top: 130px;
+        min-height: 90vh;
+
+        &__content{
+            padding: 0 20px;
+            grid-template-areas: "title" "img" "text" "btn";
+            grid-row-gap: 30px;
+
+            &__title, &__img, &__text, &__button{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin: auto;
+                text-align: center;
+
+                br{
+                    display: none;
+                }
+            }
+
+            &__title{
+                text-align: center;
+            }
+
+            &__text{
+                max-width: 450px;
+            }
+
+        }
+    }
+}

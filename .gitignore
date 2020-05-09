@@ -21,3 +21,17 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+yarn.lock
+
+/src/assets/js/firebase.js
+/src/assets/js/addEmail.js
+/src/assets/js/addRegister.js
+
+.firebase
+.firebaserc
+
+README.md
+
+package-lock.json
+
+

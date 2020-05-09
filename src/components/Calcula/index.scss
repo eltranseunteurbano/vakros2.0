@@ -1,0 +1,130 @@
+@import '../../assets/css/colors.scss';
+
+.Calcula{
+    min-height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 120px;
+
+    background-position-x: center;
+    background-position-y: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &__content{
+        width: 100%;
+        max-width: 1200px;
+        padding: 0 100px;
+        transition: all .4s;
+        box-sizing: border-box;
+
+        position: relative;
+
+        &__img{
+            width: 20%;
+            min-width: 200px;
+            max-width: 400px;
+            img{
+                width: 100%;
+            }
+        }
+
+        &__img:first-child{
+            grid-area: hombre;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        &__img:last-child{
+            grid-area: mujer;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+
+        &__body{
+            width: 50%;
+            margin: auto;
+            grid-area: form;
+
+            &__title{
+                font-size: 25px;
+                font-weight: bolder;
+                color: $blue;
+                margin-bottom: 15px;
+                text-align: center;
+            }
+
+            &__text{
+                color: $black;
+                max-width: 450px;
+                text-align: center;
+                margin: auto;
+                margin-bottom: 25px;
+            }
+
+            &__item{
+                width: 100%;
+                margin-bottom: 20px;
+                display: block;
+
+                p{
+                    color: $black;
+                    font-weight: bolder;
+                    margin-bottom: 10px;
+                }
+
+                input{
+                    width: 100%;
+                    background-color: $white;
+                    border: none;
+                    border-radius: 10px;
+                    padding: 15px 20px;
+                    box-sizing: border-box;
+                    border: solid 2px transparent;
+
+                    font-weight: bolder;
+                    color: $black;
+                    border: solid 2px $lightGray;
+                }
+                
+                input:disabled{
+                    background-color: $white;
+                    border: solid 2px $blue;
+                    color: $blue;
+                    font-weight: bolder;
+                }
+
+                input:focus{
+                    border: solid 2px $blue;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 850px){
+    .Calcula{
+        &__content{
+            padding: 0 30px;
+            
+            display: grid;
+            grid-template-areas: "form form" "hombre mujer";
+            grid-row-gap: 40px;
+
+            &__img:first-child, &__img:last-child{
+                position: relative;
+                margin: auto;
+                margin-bottom: -100px;
+            }
+
+            
+        &__body{
+            width: 100%;
+        }
+        }
+    }
+}

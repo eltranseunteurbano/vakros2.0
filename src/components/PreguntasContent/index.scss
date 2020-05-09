@@ -1,0 +1,100 @@
+@import '../../assets/css/colors.scss';
+
+.PreguntasContent{
+    padding: 150px 100px;
+    box-sizing: border-box;
+    margin-bottom: 120px;
+    display: grid;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: -500px;
+    background-position-x: center;
+    transition: all .4s;
+
+    &__title{
+        font-weight: bolder;
+        font-size: 30px;
+        color: $black;
+        margin: auto;
+        margin-bottom: 15px;
+        text-align: center;
+
+    }
+
+    &__text{
+        font-family: 'Open Sans', sans-serif;
+        color: $black;
+        margin: auto;
+        margin-bottom: 120px;
+        text-align: center;
+    }
+
+    &__wrapper{
+        width: 100%;
+        max-width: 900px;
+        min-height: 400px;
+        background-color: $white;
+        border-radius: 10px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.08);
+        box-sizing: border-box;
+        margin: auto;
+
+        &__item{
+            width: 100%;
+
+            padding: 20px 40px;
+            box-sizing: border-box;
+
+            border-bottom: solid 1px $lightGray;
+            cursor: pointer;
+
+            &__header{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                &__title{
+                    font-weight: bolder;
+                    color: $blue;
+                }
+
+                &__down{
+                    color: $blue;
+                }
+            }
+
+            &__body{
+                display: none;
+                margin-top: 10px;
+                color: $black;
+                max-width: 90%;
+                line-height: 130%;
+            }
+
+        }
+
+        &__item:last-child{
+            border: none;
+        }
+
+        .active{
+           .PreguntasContent__wrapper__item__header{
+               &__down{
+                   transform: rotate(180deg);
+               }
+           } 
+           .PreguntasContent__wrapper__item__body{
+               display: block;
+           }
+        }
+    }
+
+}
+
+@media only screen and (max-width: 850px){
+    .PreguntasContent{
+        
+        padding: 150px 20px;
+    }
+}

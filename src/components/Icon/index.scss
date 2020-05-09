@@ -1,0 +1,53 @@
+@import '../../assets/css/colors.scss';
+
+.icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+
+    opacity: .8;
+    transition: all .4s;
+    cursor: pointer;
+
+    &__svg{
+        font-size: 25px;
+        color: $blue;
+        
+    }
+}
+
+.icon:hover{
+    opacity: 1;
+}
+
+
+.icon-bg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: $lightGray;
+    border: solid 2px $blue;
+    
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+
+    opacity: .8;
+    transition: all .4s;
+    cursor: pointer;
+
+    &__svg{
+        font-size: 20px;
+        color: $blue;
+        
+    }
+}
+
+.icon-bg:hover{
+    opacity: 1;
+}

@@ -1,0 +1,28 @@
+@import '../../assets/css/colors.scss';
+
+.WhyVakros{
+
+    display: grid;
+
+    &__title{
+        font-weight: bolder;
+        font-size: 25px;
+        color: $title;
+        text-align: center;
+        margin-bottom: 20px;
+
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    &__text{
+        color: $black;
+        text-align: center;
+        margin: auto;
+        margin-bottom: 80px;
+        padding: 0 20px;
+        box-sizing: border-box;
+
+        max-width: 500px;
+    }
+}
