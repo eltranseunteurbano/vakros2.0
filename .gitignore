@@ -26,6 +26,8 @@ yarn.lock
 /src/assets/js/firebase.js
 /src/assets/js/addEmail.js
 /src/assets/js/addRegister.js
+/src/assets/js/GAKet.js
+/src/assets/js/FBpixel.js
 
 .firebase
 .firebaserc

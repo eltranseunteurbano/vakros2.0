@@ -3,6 +3,9 @@ import './index.scss'
 import addRegister from '../../assets/js/addRegister';
 import addEmail from '../../assets/js/addEmail';
 
+import ReactGA from 'react-ga';
+import ReactPixel from 'react-facebook-pixel'
+
 const WantsInvest = ( props ) => {
 
     const [ name, setName ] = React.useState("");
@@ -10,12 +13,22 @@ const WantsInvest = ( props ) => {
     const [ email, setEmail ] = React.useState("");
     const [ message, setMessage ] = React.useState("");
 
+
+
     let cleanData = ( event ) => {
         if( props.type === 'Contact' ){
-            addEmail( event, name, email, phone, message );
+            addEmail( event, name, phone, email, message );
+            ReactGA.event({
+                category: 'Email',
+                action: 'Email enviado'
+            })
         }
         else if ( props.type !== 'Contact' ){
-            addRegister( event, name, email, phone );
+            addRegister( event, name, phone, email );
+            ReactGA.event({
+                category: 'Registro',
+                action: 'Interesado registrado'
+            })
         }
 
            
@@ -24,6 +37,8 @@ const WantsInvest = ( props ) => {
         setEmail("");
         setMessage("");
     }
+    
+    ReactPixel.track( cleanData, { data: "Interesado"});
 
     return(
         <section className={props.type === 'Contact' ? "WantsInvest WantsInvest-contact" : "WantsInvest"} id="contact">
@@ -41,7 +56,7 @@ const WantsInvest = ( props ) => {
                 <article className="WantsInvest__content__form">
                     <label className="WantsInvest__content__form__item">
                         <p className="WantsInvest__content__form__item__title">Nombre y Apellido</p>
-                        <input type="text" placeholder="Miguel Lopez " value={name} required onChange={ ( event ) => setName( event.target.value ) }/>
+                        <input type="text" placeholder="Miguel Lopez" value={name} required onChange={ ( event ) => setName( event.target.value ) }/>
                     </label>
 
                     <label className="WantsInvest__content__form__item">
@@ -58,7 +73,7 @@ const WantsInvest = ( props ) => {
                         props.type === 'Contact' &&
                         <label className="WantsInvest__content__form__item">
                             <p className="WantsInvest__content__form__item__title">Mensaje</p>
-                            <textarea type="text" placeholder="Lopez" value={message} required onChange={ ( event ) => setMessage( event.target.value ) } />
+                            <textarea type="text" placeholder="Hola, estoy interesado en conocer los proyectos de Vakros" value={message} required onChange={ ( event ) => setMessage( event.target.value ) } />
                         </label>
                     }
                     

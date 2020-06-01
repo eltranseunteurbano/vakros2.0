@@ -2,7 +2,7 @@ import React from 'react'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faWhatsapp, faInstagram, faFacebookF } from '@fortawesome/free-brands-svg-icons'
-import { faHatCowboy, faAngleDown } from '@fortawesome/free-solid-svg-icons'
+import { faHatCowboy, faAngleDown, faTimes} from '@fortawesome/free-solid-svg-icons'
 import './index.scss';
 
 const Icon = ( props ) => {
@@ -29,6 +29,10 @@ const Icon = ( props ) => {
         case 'angle':
             value = faAngleDown;
             break;
+
+        case 'close':
+            value = faTimes;
+            break
         
         default:
             value = "";
@@ -37,7 +41,7 @@ const Icon = ( props ) => {
 
     return(
         <div className={ props.bg ? 'icon-bg' : 'icon'}>
-            <FontAwesomeIcon className="icon__svg" icon={ value } /> 
+            <FontAwesomeIcon className="icon__svg" icon={ value }  style={{color: props.color}} /> 
         </div>
     )
 

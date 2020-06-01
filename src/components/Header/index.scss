@@ -55,7 +55,7 @@
 
     position: fixed;
     top: 0;
-    z-index: 10;
+    z-index: 2;
 
     display: none;
 
@@ -101,13 +101,103 @@
     
 }
 
-.activedLink{
-    font-weight: bolder;
-    color: $blue;
-}
-
 .show-header{
     display: flex !important;
+}
+
+.MenuResponsive{
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    position: fixed;
+    top: 0;
+    z-index: 10;
+
+    background: white;
+
+    &__body{
+        width: 80%;
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        padding: 40px;
+        padding-top: 30px;
+        box-sizing: border-box;
+
+        &__nav{
+            display: flex;
+            flex-direction: column;
+
+            a{
+                color: $black;
+                font-weight: bolder;
+                font-size: 30px;
+                margin-bottom: 15px;
+                
+                text-decoration: none;
+                transition: all .4s;
+            }
+
+            a:hover{
+                color: $blue;
+                transform: translateX(10px);
+            }
+        }
+
+        &__redes{
+            &__items{
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+
+                margin-bottom: 20px;
+            }
+
+            &__data{
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+
+                a{
+                    text-decoration: none;
+                    margin-bottom: 5px;
+
+                    color: $black;
+                    font-weight: bolder;
+                    font-size: 20px;
+                    transition: all .4s;
+                }
+
+                a:hover{
+                    color: $blue;
+                    transform: translateX(10px);
+                }
+            }
+        }
+
+    }
+
+    &__close{
+        width: 20%;
+        height: 100%;
+
+        background: $blue;
+        box-sizing: border-box;
+        padding-top: 40px;
+
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
 }
 
 

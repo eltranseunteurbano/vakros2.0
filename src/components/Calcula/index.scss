@@ -24,7 +24,7 @@
 
         &__img{
             width: 20%;
-            min-width: 200px;
+            min-width: 100px;
             max-width: 400px;
             img{
                 width: 100%;
@@ -119,6 +119,7 @@
                 position: relative;
                 margin: auto;
                 margin-bottom: -100px;
+                display: none;
             }
 
             

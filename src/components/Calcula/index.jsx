@@ -12,8 +12,8 @@ const Calcula = () => {
 
     React.useEffect( () => {
         if(value){
-            let utilidades = ( ( value / ternera ) * vaca );
-            let utilidadesFinales = parseInt( ( utilidades * 0.2 ) );
+            let utilidades = ( value * 0.2 );
+            let utilidadesFinales = utilidades;
             let valorFinal = parseInt(  parseInt(utilidadesFinales) + parseInt(value));
             setReveneu( new Intl.NumberFormat().format(utilidadesFinales))
             setFinalReveneu( new Intl.NumberFormat().format(valorFinal))

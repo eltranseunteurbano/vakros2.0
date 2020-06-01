@@ -22,12 +22,10 @@ export const errorRegister = (() => {
         timer: 7000,
         showCloseButton: true,
         showConfirmButton: false,
-        showConfirmButton: false,
         footer: '<a href="https://api.whatsapp.com/send?phone=573022880083" target="_blank" rel="noopener noreferrer" class="modal-footer"> Escríbenos a whats app </a>'
     })
 
 });
-
 
 export const successEmail = (() => {
 
@@ -56,3 +54,14 @@ export const errorEmail = (() => {
     })
 
 });
+
+export const errorForm = ( () => {
+    Swal.fire({
+        title: "Ups",
+        text: 'Al parecer te faltan algunos campos por completar',
+        icon: 'error',
+        timer: 7000,
+        showCloseButton: true,
+        showConfirmButton: false,
+    })
+})

@@ -17,10 +17,6 @@ const information = [
         title: "Tengo muy pocos ahorros, ¿puedo invertir?",
         text: "En Vakros buscamos apoyar a todas esas personas que quieren invertir sus ahorros pero no saben cómo ni en dónde. Por esa razón tenemos un proceso bastante rápido, sencillo, seguro y económico."
     },{
-        id: 4,
-        title: "¿Hay algún riesgo de pérdida?",
-        text: "Toda inversión tiene un riesgo de pérdida, sin embargo a través de Vakros mitigamos este riesgo en un 90%."
-    },{
         id: 5,
         title: "¿Cuánto tiempo tardará mi inversión en ser devuelta?",
         text: "El tiempo de crecimiento que tarda un hato ganadero es de apróximadamente 12 a 18 meses, por lo cual tu inversión tardará el mismo tiempo en ser devuelto."

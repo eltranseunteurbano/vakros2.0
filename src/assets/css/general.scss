@@ -50,3 +50,18 @@
         letter-spacing: .5px;
     }
 }
+
+.activedLink{
+    font-weight: bolder !important;
+    color: $blue !important;
+}
+
+.ReactModalPortal{
+    .ReactModal__Overlay{
+        background-color: rgba(0,0,0,.5) !important;
+        z-index: 5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
